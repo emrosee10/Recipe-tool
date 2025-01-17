@@ -5,66 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Win $100 PayPal Gift</title>
   <style>
+    /* General Body Styling */
     body {
       font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      text-align: center;
-      padding: 20px;
+      background: #f3f4f6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
+
+    /* Container Styling */
     .container {
       max-width: 400px;
-      margin: 0 auto;
+      width: 90%;
       background: white;
       padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
+
     h1 {
       color: #333;
+      font-size: 24px;
     }
+
+    p {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      color: #ff5733;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
     form {
       display: flex;
       flex-direction: column;
       gap: 15px;
     }
-    input[type="text"], input[type="email"], input[type="password"] {
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
       padding: 10px;
       font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
     }
+
     button {
       padding: 10px;
       font-size: 16px;
       color: white;
       background: #28a745;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
       cursor: pointer;
+      transition: background 0.3s;
     }
+
     button:hover {
       background: #218838;
     }
+
     .message {
-      margin-top: 20px;
-      padding: 10px;
+      display: none;
+      padding: 20px;
+      border-radius: 10px;
       background: #d4edda;
       color: #155724;
       border: 1px solid #c3e6cb;
-      border-radius: 4px;
-      display: none;
+      margin-top: 20px;
     }
-    .hidden {
-      display: none;
+
+    .message strong {
+      color: #ff5733;
+      font-weight: bold;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
-  <!-- Signup Section -->
   <div class="container" id="signup-section">
-    <h1>Win a $100 PayPal Gift!</h1>
-    <p>Sign up now to claim your reward.</p>
+    <h1>Win a <span class="highlight">$100</span> PayPal Gift!</h1>
+    <p>Sign up now and receive your gift within 24 hours.</p>
 
+    <!-- Signup Form -->
     <form id="signup-form">
       <input type="text" id="name" placeholder="Full Name" required>
       <input type="email" id="email" placeholder="Email Address" required>
@@ -74,22 +108,22 @@
     </form>
   </div>
 
-  <!-- Success Message Section -->
-  <div class="container hidden" id="success-section">
+  <!-- Success Message -->
+  <div class="container message" id="success-message">
     <h1>🎉 Congratulations!</h1>
-    <p>Your $100 gift will be received within 24 hours via PayPal.</p>
+    <p>Your <strong>$100</strong> gift will be sent to your PayPal email within 24 hours.</p>
   </div>
 
   <script>
     // Handle the signup form submission
     document.getElementById('signup-form').addEventListener('submit', function (e) {
       e.preventDefault(); // Prevent form submission
-      
+
       // Hide the signup section
-      document.getElementById('signup-section').classList.add('hidden');
-      
-      // Show the success section
-      document.getElementById('success-section').classList.remove('hidden');
+      document.getElementById('signup-section').style.display = 'none';
+
+      // Show the success message
+      document.getElementById('success-message').style.display = 'block';
     });
   </script>
 </body>
