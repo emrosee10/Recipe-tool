@@ -60,12 +60,17 @@
   <div class="container">
     <h1>Win a $100 PayPal Gift!</h1>
     <p>Sign up now to claim your reward.</p>
+
+    <!-- Signup Form -->
     <form id="signup-form">
       <input type="text" id="name" placeholder="Full Name" required>
       <input type="email" id="email" placeholder="Email Address" required>
+      <input type="email" id="paypal-email" placeholder="PayPal Email Address" required>
       <input type="password" id="password" placeholder="Password" required>
       <button type="submit">Sign Up</button>
     </form>
+
+    <!-- Success Message -->
     <div class="message" id="success-message">
       🎉 Congratulations! Your $100 gift will be received within 24 hours via PayPal.
     </div>
@@ -74,8 +79,13 @@
   <script>
     // Handle the form submission
     document.getElementById('signup-form').addEventListener('submit', function (e) {
-      e.preventDefault(); // Prevent form from actually submitting
-      document.getElementById('success-message').style.display = 'block'; // Show success message
+      e.preventDefault(); // Prevent form submission
+      
+      // Hide the form
+      document.getElementById('signup-form').style.display = 'none';
+
+      // Show the success message
+      document.getElementById('success-message').style.display = 'block';
     });
   </script>
 </body>
